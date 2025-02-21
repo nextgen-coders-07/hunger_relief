@@ -260,10 +260,7 @@ button h1 {
   </style>
   
   <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 <body>
   
@@ -273,40 +270,45 @@ button h1 {
       <h2>Request Food</h2>
       
       <form action="https://formsubmit.co/receiverhere81@gmail.com" method="POST">
+        <!-- Hidden fields for FormSubmit settings -->
+        <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you">
+        <input type="hidden" name="_captcha" value="false">
+    
         <label for="foodName">Trust Name:</label>
-        <input type="text" id="foodName" placeholder="Enter food name" required>
-
+        <input type="text" id="foodName" name="trust_name" placeholder="Enter trust name" required>
+    
         <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" placeholder="Enter quantity (e.g., kg, servings)" required>
-
+        <input type="number" id="quantity" name="quantity" placeholder="Enter quantity (e.g., kg, servings)" required>
+    
         <label for="district">District:</label>
-        <select id="district" required onchange="updateAreas()">
-          <option value="" disabled selected>Select Your District</option>
-          <option value="Chennai">Chennai</option>
-          <option value="Coimbatore">Coimbatore</option>
-          <option value="Madurai">Madurai</option>
-          <option value="Trichy">Trichy</option>
-          <option value="Salem">Salem</option>
-          <option value="Erode">Erode</option>
-          <option value="Tirunelveli">Tirunelveli</option>
-          <option value="Vellore">Vellore</option>
-          <option value="Tiruppur">Tiruppur</option>
+        <select id="district" name="district" required onchange="updateAreas()">
+            <option value="" disabled selected>Select Your District</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Coimbatore">Coimbatore</option>
+            <option value="Madurai">Madurai</option>
+            <option value="Trichy">Trichy</option>
+            <option value="Salem">Salem</option>
+            <option value="Erode">Erode</option>
+            <option value="Tirunelveli">Tirunelveli</option>
+            <option value="Vellore">Vellore</option>
+            <option value="Tiruppur">Tiruppur</option>
         </select>
-
+    
         <label for="area">Area:</label>
-        <select id="area" required>
-          <option value="" disabled selected>Select Your Area</option>
+        <select id="area" name="area" required>
+            <option value="" disabled selected>Select Your Area</option>
         </select>
-
-        <label for="expiryDate">Expiry Time:</label>
-        <input type="time" id="expiryDate" required>
-
+    
+        <label for="expiryTime">Expiry Time:</label>
+        <input type="time" id="expiryTime" name="expiry_time" required>
+    
         <label for="phoneNumber">Phone Number:</label>
-        <input type="tel" id="phoneNumber" placeholder="Enter your phone number" required>
-        
+        <input type="tel" id="phoneNumber" name="phone_number" placeholder="Enter your phone number" required>
+    
         <button type="submit">Receive Food</button>
-      </form>
-        
+    </form>
+    
+    
         
       
     </section>
